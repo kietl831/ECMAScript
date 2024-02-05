@@ -1,4 +1,5 @@
 const API_URL = 'http://localhost:3000/';
+const SP = 'products/';
 
 let layOutProduct = (data) => {
     let stt = 1;
@@ -11,7 +12,7 @@ let layOutProduct = (data) => {
             <td class="cell"><span>${product.price} VNĐ</span></td>
             <td class="cell"><span class="badge bg-success">Còn Hàng</span></td>
             <td class="cell">
-                <a class="btn-sm app-btn-secondary" href="#">Sửa</a>
+                <a class="btn-sm app-btn-secondary" href="./editProduct.html?id=${product.id}">Sửa</a>
                 <button class="btn-sm app-btn-secondary bg-danger text-white" onclick='deleteSanPham(${product.id})'>Xóa</button>
             </td>
         </tr>
@@ -33,11 +34,11 @@ let showProducts = function (Name) {
         });
 };
 
-showProducts("products");
+showProducts(SP);
 
 // xóa
 let deleteSanPham = function(id){
-    axios.delete(API_URL + 'products/' + id)
+    axios.delete(API_URL + SP + id)
     .then((response)=>{
         console.log(response);
     })
@@ -45,5 +46,108 @@ let deleteSanPham = function(id){
         console.log("Error: ", error);
     })
 }
+
+// thiển thị loại lên from
+
+let showLoai = function() {
+    axios.get(API_URL + 'categories')
+        .then(response => {
+            let showLoaiSp = document.getElementById('showSP');
+            let html = '';
+            response.data.forEach(element => {
+                html += `<option id="categoryId" value="${element.id}">${element.name}</option>`;
+            });
+            showLoaiSp.innerHTML = html;
+        })
+        .catch(error => {
+            console.error("Error fetching categories:", error);
+        });
+};
+
+showLoai();
+
+// hiển thị id sản phẩm và sửa
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    fetch(API_URL + SP + id)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("productId").value = data.id;
+            document.getElementById("editProductName").value = data.name;
+            document.getElementById("editProductPrice").value = data.price;
+            document.getElementById("editProductDetail").value = data.detail;
+            document.getElementById("editProductImage").value = data.image;
+        })
+        .catch(error => console.error('Error:', error));
+
+    document.getElementById("editProductForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const id = document.getElementById("productId").value;
+        const name = document.getElementById("editProductName").value;
+        const price = document.getElementById("editProductPrice").value;
+        const detail = document.getElementById("editProductDetail").value;
+        const image = document.getElementById("editProductImage").value;
+
+        axios.put(`${API_URL}products/${id}`, {
+            name,
+            price,
+            detail,
+            image
+        })
+        .then(response => {
+            alert("Sửa Thành Công Sản Phẩm");
+        })
+        .catch(error => {
+            console.error("Lỗi:", error);
+        });
+    });
+})
+
+
+
+
+// thêm
+
+class AddProduct {
+    constructor() {
+        this.form = document.getElementById("addProduct");
+        this.form.addEventListener('submit', this.addProduct.bind(this));
+    }
+
+    addProduct(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('productName').value;
+        const categoryId = document.getElementById('categoryId').value;
+        const price = parseFloat(document.getElementById('productPrice').value);
+        const detail = document.getElementById('productDetail').value;
+        const image = document.getElementById('productImage').value;
+
+        const newProduct = {
+            name: name,
+            cate_id: categoryId,
+            price: price,
+            detail: detail,
+            image: image
+        };
+
+        // Send POST request using Axios
+        axios.post(API_URL + SP, newProduct)
+            .then(response => {
+                alert("Thêm Sản Phẩm Thành Công");
+                this.form.reset(); // reset from khi thêm thành công
+            })
+            .catch(error => {
+                console.error("Error adding product:", error);
+            });
+    }
+}
+
+const addProduct = new AddProduct();
+
+
 
 

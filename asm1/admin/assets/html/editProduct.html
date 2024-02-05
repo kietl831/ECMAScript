@@ -51,6 +51,7 @@
 
 						<div class="app-utilities col-auto">
 							
+
 							<div class="app-utility-item app-user-dropdown dropdown">
 								<a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#"
 									role="button" aria-expanded="false"><img src="assets/images/user.png"
@@ -192,23 +193,37 @@
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
 			    
-			    <h1 class="app-page-title">Thêm Loại Sản Phẩm</h1>
+			    <h1 class="app-page-title">Sửa Sản Phẩm</h1>
 
 				<div class="col-12 col-md-10">
                     <div class="app-card app-card-settings shadow-sm p-4">
                         
                         <div class="app-card-body">
-                            <form class="settings-form" id="addType">
+                            <form class="settings-form" id="editProductForm">
+								<input type="hidden" id="productId">
                                 <div class="mb-3">
-                                    <label for="setting-input-2" class="form-label">ID Loại</label>
-                                    <input type="text" class="form-control" id="" placeholder="Tự Tăng" readonly>
+                                    <label for="editProductName" class="form-label">Tên Sản Phẩm<span class="ms-2" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus"  data-bs-placement="top" data-bs-content="This is a Bootstrap popover example. You can use popover to provide extra info."></span></label>
+                                    <input type="text" class="form-control" id="editProductName" placeholder="Nhập tên sản phẩm">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="setting-input-1" class="form-label">Tên Loại Sản Phẩm<span class="ms-2" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus"  data-bs-placement="top" data-bs-content="This is a Bootstrap popover example. You can use popover to provide extra info."></span></label>
-                                    <input type="text" class="form-control" id="typeName" placeholder="Nhập tên loại sản phẩm">
+                                    <label for="editProductPrice" class="form-label">Giá Tiền Sản Phẩm</label>
+                                    <input type="text" class="form-control" id="editProductPrice" placeholder="Nhập giá tiền">
                                 </div>
-                                
-                                <button type="submit" class="btn app-btn-primary" >Thêm</button>
+                                <div class="mb-3">
+                                    <label for="setting-input-3" class="form-label">Chọn Loại Sản Phẩm</label>
+                                    <select name="" id="showSP" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editProductImage" class="form-label">Chọn Ảnh Sản Phẩm</label>
+                                    <input type="file" class="form-control" id="editProductImage" >
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editProductDetail" class="form-label">Mô Tả Sản Phẩm</label>
+                                    <input type="text" class="form-control" id="editProductDetail" placeholder="Nhập Mô Tả">
+                                </div>
+                                <button type="submit" class="btn app-btn-primary" >Sửa</button>
                             </form>
                         </div><!--//app-card-body-->
                         
@@ -232,7 +247,7 @@
     <!-- Javascript -->   
 	<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> 
 	<!-- <script type="module" src="../modules/app.js"></script> -->
-	<script src="../code/typeProducts.js"></script>      
+	<script src="../code/products.js"></script>      
 	
     <script src="../../assets/plugins/popper.min.js"></script>
     <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>  

@@ -59,23 +59,22 @@
       "image": "sp5.jpg"
     },
     {
-      "id": 6,
       "name": "SPIDER MAN",
-      "cate_id": 6,
-      "price": 250000,
-      "detail": "Cuộc phiêu lưu đầy thách thức và hồi hộp.",
-      "image": "sp6.jpg"
+      "price": "250000",
+      "detail": "Cuộc phiêu lưu đầy thách thức và hồi hộp",
+      "image": "sp6.jpg",
+      "id": 6
     }
   ],
   "orders": [
     {
       "id": 1,
-      "customer_name": "John Doe",
-      "customer_address": "123 Main St",
-      "customer_email": "john.doe@example.com",
-      "customer_phone_number": "555-1234",
-      "created_date": "2022-01-20",
-      "status": "Đã đặt hàng"
+      "customer_name": "Lý Văn Kiệt",
+      "customer_address": "Kiên Giang",
+      "customer_email": "kietlvpc07051@fpt.edu.vn",
+      "customer_phone_number": "+84 777449336",
+      "created_date": "22-12-2023",
+      "status": "1"
     },
     {
       "id": 2,
@@ -84,7 +83,7 @@
       "customer_email": "jane.smith@example.com",
       "customer_phone_number": "555-5678",
       "created_date": "2022-01-21",
-      "status": "Đã đặt hàng"
+      "status": "2"
     },
     {
       "id": 3,
@@ -93,7 +92,7 @@
       "customer_email": "bob.johnson@example.com",
       "customer_phone_number": "555-9012",
       "created_date": "2022-01-22",
-      "status": "Đã đặt hàng"
+      "status": "2"
     }
   ],
   "order_details": [
@@ -129,7 +128,7 @@
     },
     {
       "order_id": 3,
-      "product_id": 7,
+      "product_id": 6,
       "quantity": 2,
       "unit_price": 15.99
     }
