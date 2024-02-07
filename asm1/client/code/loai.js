@@ -29,8 +29,8 @@ let danhMuc = function () {
                             <div class="course-1-item">
                                 <figure class="thumnail">
                                     <a href="course-single.html"><img src="images/${product.image}" alt="Image" class="img-fluid"></a>
-                                    <div class="price">${product.price}</div>
-                                    <div class="category"><h3>${product.name}</h3></div>  
+                                    <div class="price">${product.price} VNĐ</div>
+                                    <div class="category text-truncate"><h3>${product.name}</h3></div>  
                                 </figure>
                                 <div class="course-1-content pb-4">
                                     <div class="rating text-center mb-3">

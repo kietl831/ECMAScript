@@ -11,8 +11,8 @@ let hienThiSanPham = function () {
                     <div class="course-1-item">
                         <figure class="thumnail">
                         <a href="course-single.html"><img src="images/${element.image}" alt="Image" class="img-fluid"></a>
-                        <div class="price">${element.price}</div>
-                        <div class="category"><h3>${element.name}</h3></div>  
+                        <div class="price">${element.price} VNĐ</div>
+                        <div class="category text-truncate"><h3>${element.name}</h3></div>  
                         </figure>
                         <div class="course-1-content pb-4">
                         <div class="rating text-center mb-3">

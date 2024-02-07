@@ -26,12 +26,9 @@ function detailProduct(data) {
         </ul>
 
         <p>
-            <a href="#" class="btn btn-primary rounded-0 btn-lg px-5">Thêm Vào Giỏ Hàng</a>
+            <a href="./cart.html?id=${data.id}" class="btn btn-primary rounded-0 btn-lg px-5">Thêm Vào Giỏ Hàng</a>
         </p>
-        <p>
-            <a href="#" class="btn btn-primary rounded-0 btn-lg px-5">Mua Hàng</a>
-        </p>
-
+       
     </div>
   `;
     return html;

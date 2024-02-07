@@ -31,7 +31,7 @@ const createOrderDiv = (order) => {
                         <div class="">
                             <p><b>Tên Sản Phẩm: ${order.product_name}</b></p>
                             <p>
-                                <b>Tổng Giá tiền:</b> ${order.total_price} <br>
+                                <b>Tổng Giá tiền:</b> ${order.total_price} VNĐ<br>
                                 <b>Số lượng sản Phẩm:</b> ${order.quantity} <br>
                             </p>
                             <p>

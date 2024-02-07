@@ -91,11 +91,10 @@ class addType{
     addTypeProduct(event){
         event.preventDefault();
 
-        const id = addTypeSP.generateNewCategoryId();
         const name = document.getElementById('typeName').value;
 
         axios.post(API_URL + categories , {
-            id: id,
+            
             name: name,
         }).then(response => {
             const add = response.data;
@@ -105,8 +104,6 @@ class addType{
         })
     }
 
-    generateNewCategoryId(){
-        return Math.floor(Math.random() * 1000) + 1;
-    }
+    
 }
 const addTypeSP = new addType();

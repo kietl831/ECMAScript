@@ -83,7 +83,7 @@
       "customer_email": "jane.smith@example.com",
       "customer_phone_number": "555-5678",
       "created_date": "2022-01-21",
-      "status": "2"
+      "status": "1"
     },
     {
       "id": 3,
@@ -92,7 +92,7 @@
       "customer_email": "bob.johnson@example.com",
       "customer_phone_number": "555-9012",
       "created_date": "2022-01-22",
-      "status": "2"
+      "status": "1"
     }
   ],
   "order_details": [
@@ -100,37 +100,37 @@
       "order_id": 1,
       "product_id": 1,
       "quantity": 2,
-      "unit_price": 10.99
+      "unit_price": 400000
     },
     {
       "order_id": 1,
       "product_id": 3,
       "quantity": 1,
-      "unit_price": 8.99
+      "unit_price": 40000
     },
     {
       "order_id": 2,
       "product_id": 2,
       "quantity": 3,
-      "unit_price": 12.99
+      "unit_price": 450000
     },
     {
       "order_id": 2,
       "product_id": 5,
       "quantity": 1,
-      "unit_price": 11.49
+      "unit_price": 130000
     },
     {
       "order_id": 3,
       "product_id": 4,
       "quantity": 1,
-      "unit_price": 14.99
+      "unit_price": 290000
     },
     {
       "order_id": 3,
       "product_id": 6,
       "quantity": 2,
-      "unit_price": 15.99
+      "unit_price": 500000
     }
   ]
 }
