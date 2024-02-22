@@ -10,7 +10,7 @@ let hienThiSanPham = function () {
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                        <a href="course-single.html"><img src="images/${element.image}" alt="Image" class="img-fluid"></a>
+                        <a href="./course-single.html?id=${element.id}"><img src="images/${element.image}" alt="Image" class="img-fluid"></a>
                         <div class="price">${element.price} VNĐ</div>
                         <div class="category text-truncate"><h3>${element.name}</h3></div>  
                         </figure>
